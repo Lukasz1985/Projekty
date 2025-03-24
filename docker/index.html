@@ -88,14 +88,39 @@
       Projekt prywatnego serwera postawionego na VPS z wykorzystaniem Dockera. Konteneryzacja usług: <strong>Nextcloud</strong> (chmura prywatna), <strong>Nginx</strong> jako serwer www/proxy, <strong>MariaDB</strong> jako zaplecze danych oraz <strong>Netdata</strong> do monitoringu systemu. Konfiguracja docker-compose, tunelowanie portów, bezpieczny dostęp przez VPN.
     </p>
 
-    <h3>Przykładowe kontenery</h3>
-<div class="code-block">
-  IMAGE                     COMMAND                  STATUS<br>
-  nextcloud:latest         /entrypoint.sh apache2   Up 10 days<br>
-  nginx:latest             /docker-entrypoint.sh    Up 10 days<br>
-  netdata/netdata:latest   /usr/sbin/run.sh         Up 10 days (healthy)<br>
-  mariadb:latest           /docker-entrypoint.sh    Up 10 days
-</div>
+   <h3>Przykładowe kontenery</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Command</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>nextcloud:latest</td>
+      <td>/entrypoint.sh apache2</td>
+      <td>Up 10 days</td>
+    </tr>
+    <tr>
+      <td>nginx:latest</td>
+      <td>/docker-entrypoint.sh</td>
+      <td>Up 10 days</td>
+    </tr>
+    <tr>
+      <td>netdata/netdata:latest</td>
+      <td>/usr/sbin/run.sh</td>
+      <td>Up 10 days (healthy)</td>
+    </tr>
+    <tr>
+      <td>mariadb:latest</td>
+      <td>/docker-entrypoint.sh</td>
+      <td>Up 10 days</td>
+    </tr>
+  </tbody>
+</table>
+
 
 
     <h3>Zrzuty ekranu</h3>
