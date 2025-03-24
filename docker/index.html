@@ -36,11 +36,38 @@
       margin-bottom: 30px;
     }
 
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+      font-size: 0.95rem;
+    }
+
+    th {
+      background-color: #f0f0f0;
+      font-weight: bold;
+    }
+
+    tr:hover {
+      background-color: #f9f9f9;
+    }
+
     .gallery {
       display: flex;
       flex-wrap: wrap;
       gap: 15px;
       justify-content: center;
+      margin-top: 30px;
     }
 
     .gallery img {
@@ -48,14 +75,6 @@
       width: calc(50% - 10px);
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .code-block {
-      background-color: #eee;
-      font-family: monospace;
-      padding: 15px;
-      border-radius: 5px;
-      overflow-x: auto;
     }
 
     .back-link {
@@ -88,45 +107,42 @@
       Projekt prywatnego serwera postawionego na VPS z wykorzystaniem Dockera. Konteneryzacja usług: <strong>Nextcloud</strong> (chmura prywatna), <strong>Nginx</strong> jako serwer www/proxy, <strong>MariaDB</strong> jako zaplecze danych oraz <strong>Netdata</strong> do monitoringu systemu. Konfiguracja docker-compose, tunelowanie portów, bezpieczny dostęp przez VPN.
     </p>
 
-   <h3>Przykładowe kontenery</h3>
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Command</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>nextcloud:latest</td>
-      <td>/entrypoint.sh apache2</td>
-      <td>Up 10 days</td>
-    </tr>
-    <tr>
-      <td>nginx:latest</td>
-      <td>/docker-entrypoint.sh</td>
-      <td>Up 10 days</td>
-    </tr>
-    <tr>
-      <td>netdata/netdata:latest</td>
-      <td>/usr/sbin/run.sh</td>
-      <td>Up 10 days (healthy)</td>
-    </tr>
-    <tr>
-      <td>mariadb:latest</td>
-      <td>/docker-entrypoint.sh</td>
-      <td>Up 10 days</td>
-    </tr>
-  </tbody>
-</table>
-
-
+    <h3>Przykładowe kontenery</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Command</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>nextcloud:latest</td>
+          <td>/entrypoint.sh apache2</td>
+          <td>Up 10 days</td>
+        </tr>
+        <tr>
+          <td>nginx:latest</td>
+          <td>/docker-entrypoint.sh</td>
+          <td>Up 10 days</td>
+        </tr>
+        <tr>
+          <td>netdata/netdata:latest</td>
+          <td>/usr/sbin/run.sh</td>
+          <td>Up 10 days (healthy)</td>
+        </tr>
+        <tr>
+          <td>mariadb:latest</td>
+          <td>/docker-entrypoint.sh</td>
+          <td>Up 10 days</td>
+        </tr>
+      </tbody>
+    </table>
 
     <h3>Zrzuty ekranu</h3>
     <div class="gallery">
-      <img src="img/nextcloud.png" alt="Nextcloud" />
-      <img src="img/netdata.png" alt="Netdata monitoring" />
+      <img src="img/1.jpg" alt="Zrzut ekranu Nextcloud / Netdata" />
     </div>
 
     <a class="back-link" href="../index.html">← Powrót do strony głównej</a>
