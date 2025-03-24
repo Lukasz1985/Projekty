@@ -12,30 +12,25 @@
       padding: 0;
       color: #2c3e50;
     }
-
     header {
       background-color: #2c3e50;
       color: white;
       text-align: center;
       padding: 30px 20px;
     }
-
     header h1 {
       margin: 0;
       font-size: 2rem;
     }
-
     .container {
       max-width: 1000px;
       margin: 40px auto;
       padding: 0 20px;
     }
-
     .description {
       font-size: 1.1rem;
       margin-bottom: 30px;
     }
-
     table {
       width: 100%;
       border-collapse: collapse;
@@ -45,23 +40,19 @@
       overflow: hidden;
       box-shadow: 0 1px 4px rgba(0,0,0,0.1);
     }
-
     th, td {
       padding: 12px 16px;
       text-align: left;
       border-bottom: 1px solid #eee;
       font-size: 0.95rem;
     }
-
     th {
       background-color: #f0f0f0;
       font-weight: bold;
     }
-
     tr:hover {
       background-color: #f9f9f9;
     }
-
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -69,14 +60,14 @@
       justify-content: center;
       margin-top: 30px;
     }
-
     .gallery img {
-      max-width: 100%;
-      width: calc(50% - 10px);
+      width: 100%;
+      max-width: 400px;
+      max-height: 250px;
+      object-fit: cover;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
-
     .code-block {
       background-color: #eee;
       font-family: monospace;
@@ -85,7 +76,6 @@
       overflow-x: auto;
       margin-top: 30px;
     }
-
     .back-link {
       display: block;
       margin-top: 40px;
@@ -94,7 +84,6 @@
       color: #007acc;
       text-decoration: none;
     }
-
     footer {
       text-align: center;
       padding: 20px;
@@ -159,49 +148,15 @@
 
     <h3>Połączenie przez SSH (tunel)</h3>
     <div class="code-block">
-ssh -L 19999:localhost:19999 root@89.116.27.178
+ssh -L 19999:localhost:19999 użytkownik@twoj-vps-ip
 # następnie otwórz http://localhost:19999
     </div>
 
-    <h3>Przykładowy docker-compose.yml</h3>
-    <div class="code-block">
-version: '3.9'
-services:
-  nextcloud:
-    image: nextcloud:latest
-    ports:
-      - "8080:80"
-    volumes:
-      - nextcloud_data:/var/www/html
-    depends_on:
-      - mariadb
-
-  mariadb:
-    image: mariadb:latest
-    environment:
-      MYSQL_ROOT_PASSWORD: example
-    volumes:
-      - db_data:/var/lib/mysql
-
-  nginx:
-    image: nginx:latest
-    ports:
-      - "80:80"
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
-
-  netdata:
-    image: netdata/netdata:latest
-    network_mode: host
-    cap_add:
-      - SYS_PTRACE
-    security_opt:
-      - apparmor:unconfined
-
-volumes:
-  nextcloud_data:
-  db_data:
-    </div>
+    <h3>Plik docker-compose.yml</h3>
+    <p>
+      Przykładową konfigurację znajdziesz tutaj:
+      <a href="docker-compose.yml" target="_blank">📄 docker-compose.yml</a>
+    </p>
 
     <a class="back-link" href="../index.html">← Powrót do strony głównej</a>
   </div>
