@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Docker VPS – Łukasz</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 0;
+      color: #2c3e50;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .gallery img {
+      max-width: 100%;
+      width: calc(50% - 10px);
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .code-block {
+      background-color: #eee;
+      font-family: monospace;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 40px;
+      text-align: center;
+      font-weight: bold;
+      color: #007acc;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #eaeaea;
+      font-size: 0.9rem;
+      color: #777;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📦 Docker VPS – serwer prywatny</h1>
+  </header>
+
+  <div class="container">
+    <p class="description">
+      Projekt prywatnego serwera postawionego na VPS z wykorzystaniem Dockera. Konteneryzacja usług: <strong>Nextcloud</strong> (chmura prywatna), <strong>Nginx</strong> jako serwer www/proxy, <strong>MariaDB</strong> jako zaplecze danych oraz <strong>Netdata</strong> do monitoringu systemu. Konfiguracja docker-compose, tunelowanie portów, bezpieczny dostęp przez VPN.
+    </p>
+
+    <h3>Przykładowe kontenery</h3>
+    <div class="code-block">
+      IMAGE                     COMMAND                  STATUS<br>
+      nextcloud:latest         /entrypoint.sh apache2   Up 10 days<br>
+      nginx:latest             /docker-entrypoint.sh    Up 10 days<br>
+      netdata/netdata:latest   /usr/sbin/run.sh         Up 10 days (healthy)<br>
+      mariadb:latest           /docker-entrypoint.sh    Up 10 days
+    </div>
+
+    <h3>Zrzuty ekranu</h3>
+    <div class="gallery">
+      <img src="img/nextcloud.png" alt="Nextcloud" />
+      <img src="img/netdata.png" alt="Netdata monitoring" />
+    </div>
+
+    <a class="back-link" href="../index.html">← Powrót do strony głównej</a>
+  </div>
+
+  <footer>
+    © 2025 Łukasz – Serwer VPS z Dockerem
+  </footer>
+
+</body>
+</html>
