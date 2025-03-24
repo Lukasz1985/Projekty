@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Docker VPS – Łukasz</title>
+
+  <!-- GLightbox CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet" />
+
   <style>
     body {
       font-family: "Segoe UI", sans-serif;
@@ -60,9 +64,13 @@
       justify-content: center;
       margin-top: 30px;
     }
-    .gallery img {
+    .gallery a {
+      display: block;
       width: 100%;
       max-width: 400px;
+    }
+    .gallery img {
+      width: 100%;
       max-height: 250px;
       object-fit: cover;
       border-radius: 8px;
@@ -140,15 +148,15 @@
 
     <h3>Zrzuty ekranu – panel Netdata</h3>
     <div class="gallery">
-      <img src="img/1.jpg" alt="Netdata – dane ogólne" />
-      <img src="img/2.jpg" alt="Netdata – zużycie CPU i RAM" />
-      <img src="img/3.jpg" alt="Netdata – ruch sieciowy i obciążenie" />
-      <img src="img/4.jpg" alt="Netdata – wykresy anomalii" />
+      <a href="img/1.jpg" class="glightbox" data-gallery="netdata"><img src="img/1.jpg" alt="Netdata – dane ogólne" /></a>
+      <a href="img/2.jpg" class="glightbox" data-gallery="netdata"><img src="img/2.jpg" alt="Netdata – zużycie CPU i RAM" /></a>
+      <a href="img/3.jpg" class="glightbox" data-gallery="netdata"><img src="img/3.jpg" alt="Netdata – ruch sieciowy i obciążenie" /></a>
+      <a href="img/4.jpg" class="glightbox" data-gallery="netdata"><img src="img/4.jpg" alt="Netdata – wykresy anomalii" /></a>
     </div>
 
     <h3>Połączenie przez SSH (tunel)</h3>
     <div class="code-block">
-ssh -L 19999:localhost:19999 użytkownik@twoj-vps-ip
+ssh -L 19999:localhost:19999 użytkownik@twoj-vps-ip<br>
 # następnie otwórz http://localhost:19999
     </div>
 
@@ -164,6 +172,12 @@ ssh -L 19999:localhost:19999 użytkownik@twoj-vps-ip
   <footer>
     © 2025 Łukasz – Serwer VPS z Dockerem
   </footer>
+
+  <!-- GLightbox JS -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    const lightbox = GLightbox({ selector: '.glightbox' });
+  </script>
 
 </body>
 </html>
