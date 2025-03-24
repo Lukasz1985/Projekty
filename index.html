@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – Łukasz</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 0;
+      color: #2c3e50;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .project-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 30px;
+      transition: transform 0.2s;
+    }
+
+    .project-card:hover {
+      transform: scale(1.01);
+    }
+
+    .project-title {
+      margin-top: 0;
+      font-size: 1.5rem;
+      color: #007acc;
+    }
+
+    .project-description {
+      margin: 10px 0 15px;
+    }
+
+    .project-link {
+      text-decoration: none;
+      color: #007acc;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+      padding: 20px;
+      margin-top: 40px;
+      background-color: #eaeaea;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Portfolio projektów – Łukasz</h1>
+    <p>Embedded · Robotyka · Administracja · DevOps · Programowanie · Cyberbezpieczeństwo</p>
+  </header>
+
+  <div class="container">
+
+    <!-- 🚀 PRZYKŁADOWY PROJEKT -->
+    <div class="project-card">
+      <h2 class="project-title">🤖 Robot STM32 – omijanie przeszkód</h2>
+      <p class="project-description">
+        Robot mobilny sterowany przez mikrokontroler STM32. Wykorzystuje czujnik ultradźwiękowy do wykrywania przeszkód i omijania ich. Logika napisana w C (bare-metal).
+      </p>
+      <a class="project-link" href="robot/index.html" target="_blank">Zobacz projekt</a>
+    </div>
+
+    <!-- ✨ PRZYKŁAD NOWEGO PROJEKTU -->
+    <div class="project-card">
+      <h2 class="project-title">📦 Docker – konteneryzacja środowisk</h2>
+      <p class="project-description">
+        Zautomatyzowane środowiska dla aplikacji embedded i serwisów developerskich. Własne obrazy Docker, Compose, Nginx reverse proxy, monitoring kontenerów.
+      </p>
+      <a class="project-link" href="https://github.com/Lukasz1985/docker-projects" target="_blank">Repozytorium GitHub</a>
+    </div>
+
+    <!-- 🛠️ DODAWAJ PROJEKTY PONIŻEJ -->
+    <!-- Kopiuj i modyfikuj ten blok:
+    <div class="project-card">
+      <h2 class="project-title">TYTUŁ PROJEKTU</h2>
+      <p class="project-description">
+        Krótki opis projektu...
+      </p>
+      <a class="project-link" href="LINK_DO_PROJEKTU" target="_blank">Zobacz projekt</a>
+    </div>
+    -->
+
+  </div>
+
+  <footer>
+    © 2025 Łukasz – Wszystkie projekty open-source · Kontakt: stasiak85lukasz@gmail.com.com
+  </footer>
+
+</body>
+</html>
