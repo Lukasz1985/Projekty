@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Python – Prosty skaner sieci LAN</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🛰️ Python – Narzędzia sieciowe</title>
   <style>
     body {
       font-family: "Segoe UI", sans-serif;
@@ -16,8 +16,18 @@
     header {
       background-color: #2c3e50;
       color: white;
-      padding: 30px 20px;
+      padding: 40px 20px;
       text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-top: 10px;
     }
 
     .container {
@@ -26,8 +36,21 @@
       padding: 0 20px;
     }
 
+    .project-box {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 40px;
+    }
+
+    .project-box h2 {
+      color: #007acc;
+      margin-top: 0;
+    }
+
     .description {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       margin-bottom: 20px;
     }
 
@@ -42,7 +65,7 @@
 
     .download-link {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 15px;
       font-weight: bold;
       color: #007acc;
       text-decoration: none;
@@ -50,7 +73,7 @@
 
     .back-link {
       display: block;
-      margin-top: 40px;
+      margin-top: 60px;
       text-align: center;
       font-weight: bold;
       color: #007acc;
@@ -70,17 +93,21 @@
 <body>
 
   <header>
-    <h1>🛰️ Python – Skaner IP w sieci LAN</h1>
+    <h1>🛰️ Python – Narzędzia sieciowe</h1>
+    <p>Zbiór prostych skryptów do skanowania i analizy sieci LAN</p>
   </header>
 
   <div class="container">
-    <p class="description">
-      To prosty skrypt w Pythonie, który skanuje lokalną sieć i wypisuje adresy IP urządzeń, które odpowiedziały na <code>ping</code>.  
-      Działa zarówno na Windowsie, jak i Linuxie. Nie wymaga żadnych dodatkowych bibliotek.
-    </p>
 
-    <h3>Kod źródłowy</h3>
-    <div class="code-block">
+    <!-- 📡 SKANER IP -->
+    <div class="project-box">
+      <h2>📡 Skaner IP (ping sweep)</h2>
+      <p class="description">
+        Skrypt skanuje zadaną podsieć (np. <code>192.168.1.0/24</code>) i wypisuje adresy IP aktywnych hostów na podstawie odpowiedzi na polecenie <code>ping</code>.
+        Działa na Windows i Linux bez dodatkowych bibliotek.
+      </p>
+
+      <div class="code-block">
 import subprocess
 import platform
 import ipaddress
@@ -96,15 +123,25 @@ for ip in network.hosts():
                             stderr=subprocess.DEVNULL)
     if result.returncode == 0:
         print(f"🟢 Odpowiada: {ip}")
+      </div>
+
+      <a class="download-link" href="scanner.py" download>📄 Pobierz plik: scanner.py</a>
     </div>
 
-    <a class="download-link" href="scanner.py" download>📄 Pobierz plik: scanner.py</a>
+    <!-- 🛠️ TU DODASZ KOLEJNE NARZĘDZIA -->
+    <!-- 
+    <div class="project-box">
+      <h2>🔧 Inne narzędzie</h2>
+      <p class="description">Opis...</p>
+      <div class="code-block">Kod...</div>
+    </div>
+    -->
 
     <a class="back-link" href="../index.html">← Powrót do strony głównej</a>
   </div>
 
   <footer>
-    © 2025 Łukasz – Narzędzia sieciowe w Pythonie
+    © 2025 Łukasz – Projekty w Pythonie
   </footer>
 
 </body>
