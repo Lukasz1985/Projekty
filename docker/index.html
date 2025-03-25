@@ -113,6 +113,18 @@
       Projekt prywatnego serwera na VPS z wykorzystaniem Dockera. Uruchomiono kontenery: <strong>Nextcloud</strong>, <strong>MariaDB</strong>, <strong>Nginx</strong> oraz <strong>Netdata</strong>. Usługi są odizolowane, zarządzane przez <code>docker-compose</code> i monitorowane lokalnie przez tunel SSH.
     </p>
 
+    <p class="description">
+      Projekt powstawał etapami i obejmował:
+      <ul>
+        <li>konfigurację i zabezpieczenie serwera VPS (Ubuntu),</li>
+        <li>wdrożenie firewalla (UFW) oraz systemu ochrony przed brute-force (Fail2Ban),</li>
+        <li>uruchomienie środowiska kontenerowego Docker.</li>
+      </ul>
+      Obecnie aktywne są 4 kontenery (Nextcloud, MariaDB, Netdata, Nginx).<br />
+      Serwer hostuje witrynę <strong>netnerd.pl</strong> – zawierającą m.in. mini-gry i przekierowania do usług kontenerowych.<br />
+      Całość działa pod kontrolą Nginx (reverse proxy), z certyfikatem SSL (Let's Encrypt).
+    </p>
+
     <h3>Przykładowe kontenery</h3>
     <table>
       <thead>
