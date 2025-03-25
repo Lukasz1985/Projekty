@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python – Prosty skaner sieci LAN</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 0;
+      color: #2c3e50;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .code-block {
+      background-color: #eee;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: monospace;
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+
+    .download-link {
+      display: inline-block;
+      margin-top: 20px;
+      font-weight: bold;
+      color: #007acc;
+      text-decoration: none;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 40px;
+      text-align: center;
+      font-weight: bold;
+      color: #007acc;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #eaeaea;
+      color: #777;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🛰️ Python – Skaner IP w sieci LAN</h1>
+  </header>
+
+  <div class="container">
+    <p class="description">
+      To prosty skrypt w Pythonie, który skanuje lokalną sieć i wypisuje adresy IP urządzeń, które odpowiedziały na <code>ping</code>.  
+      Działa zarówno na Windowsie, jak i Linuxie. Nie wymaga żadnych dodatkowych bibliotek.
+    </p>
+
+    <h3>Kod źródłowy</h3>
+    <div class="code-block">
+import subprocess
+import platform
+import ipaddress
+
+network = ipaddress.ip_network("192.168.1.0/24", strict=False)
+param = "-n" if platform.system().lower() == "windows" else "-c"
+
+print(f"Skanowanie sieci {network}...\n")
+
+for ip in network.hosts():
+    result = subprocess.run(["ping", param, "1", str(ip)],
+                            stdout=subprocess.DEVNULL,
+                            stderr=subprocess.DEVNULL)
+    if result.returncode == 0:
+        print(f"🟢 Odpowiada: {ip}")
+    </div>
+
+    <a class="download-link" href="scanner.py" download>📄 Pobierz plik: scanner.py</a>
+
+    <a class="back-link" href="../index.html">← Powrót do strony głównej</a>
+  </div>
+
+  <footer>
+    © 2025 Łukasz – Narzędzia sieciowe w Pythonie
+  </footer>
+
+</body>
+</html>
