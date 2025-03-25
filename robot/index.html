@@ -99,7 +99,16 @@
 
   <div class="container">
     <p class="description">
-      Ten projekt to autonomiczny robot mobilny z mikrokontrolerem STM32F3, wyposażony w czujniki ultradźwiękowe do wykrywania przeszkód. Sterowanie napędem 2WD, algorytm unikania w języku C (bare-metal), obudowa projektowana i drukowana w 3D.
+      Autonomiczny robot mobilny oparty na płytce STM32F3DISCOVERY. Wyposażony w pojedynczy czujnik ultradźwiękowy do wykrywania przeszkód oraz wyświetlacz LCD do prezentacji informacji diagnostycznych.
+      <br /><br />
+      Elektronika oparta na dwóch niezależnych obwodach zasilania:
+      <ul>
+        <li>obwód logiczny zasilany z 4 baterii AA (dla STM32 i peryferiów),</li>
+        <li>obwód mocy zasilany z dwóch baterii 9V (dla silników DC),</li>
+        <li>układ stabilizacji napięcia oparty na LM7805,</li>
+        <li>sterowanie silnikami realizowane przez mostek H (L298N).</li>
+      </ul>
+      Podwozie zostało zakupione jako gotowy zestaw 2WD. Sterowanie napisane w języku C (bare-metal), bez użycia bibliotek HAL. Robot samodzielnie omija przeszkody na podstawie danych z czujnika.
     </p>
 
     <div class="gallery">
